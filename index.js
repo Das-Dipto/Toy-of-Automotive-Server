@@ -35,9 +35,13 @@ async function run() {
         res.send(result);
     })
 
-    
-
-
+    //Create Operation for Add a toy Section
+    app.post('/addToys', async(req, res)=>{
+        const newToy = req.body;
+        console.log(newToy);
+        const result = await storeCollection.insertOne(newToy);
+        res.send(result);
+    })
 
 
     // Send a ping to confirm a successful connection
