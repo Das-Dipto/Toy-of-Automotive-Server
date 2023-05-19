@@ -1,0 +1,68 @@
+[
+    {
+        "picture" : "https://i.ibb.co/nzR2sHn/lambo.webp",
+        "toyName" : "Lamborghini Centenario",
+        "sellerName" : "Marty Spencer",
+        "sellerEmail" : "Marty@rocketer.com",
+        "subCategory" : "Sports Car",
+        "price" : 35,
+        "rating" : "8/10",
+        "quantity" : 25,
+        "description" : "Highly detailed 1:18 scale Lamborghini Centario diecast model made of metal alloy, perfect for car enthusiasts and collectors."
+    },
+    {
+        "picture" : "https://i.ibb.co/7pxzRjx/buggati.webp",
+        "toyName" : "Buggati Chiron",
+        "sellerName" : "Justin Rivers",
+        "sellerEmail" : "Justin@Karaoke.com",
+        "subCategory" : "Sports Car",
+        "price" : 50,
+        "rating" : "9/10",
+        "quantity" : 14,
+        "description" : "Highly detailed 1:20 scale Bugatti Chiron diecast model made of metal alloy, perfect for car enthusiasts and collectors."
+    },
+    {
+        "picture" : "https://i.ibb.co/7pRxyC0/scania.jpg",
+        "toyName" : "Scania Garbage Collector",
+        "sellerName" : "Ronald Stevens",
+        "sellerEmail" : "Stevens@hydro.com",
+        "subCategory" : "Truck",
+        "price" : 50,
+        "rating" : "8/10",
+        "quantity" : 21,
+        "description" : "Highly detailed 2:16 scale Scania garbage collector truck diecast model made of metal alloy, perfect for truck enthusiasts and collectors." 
+    },
+    {
+        "picture" : "https://i.ibb.co/n6dtZy0/petebilt.jpg",
+        "toyName" : "PeterBuilt Heavy Duty",
+        "sellerName" : "Allen Rutgers",
+        "sellerEmail" : "Allen@rutgers.com",
+        "subCategory" : "Truck",
+        "price" : 30,
+        "rating" : "8/10",
+        "quantity" : 28,
+        "description" : "Highly detailed 2:16 scale PeterBuilt Heavy Duty truck diecast model made of metal alloy, perfect for truck enthusiasts and collectors." 
+    },
+    {
+        "picture" : "https://i.ibb.co/sFvTWPF/M1Abram.jpg",
+        "toyName" : "M1A2 Abrams Battle Tank",
+        "sellerName" : "Jonathan Polinski",
+        "sellerEmail" : "Jonathan@yahoo.com",
+        "subCategory" : "Military Vehicle",
+        "price" : 55,
+        "rating" : "10/10",
+        "quantity" : 10,
+        "description" : "Highly detailed 3:40 scale M1A2 Abrams Main Battle Tank diecast model made of metal alloy, perfect for military toy enthusiasts and collectors." 
+    },
+    {
+        "picture" : "https://i.ibb.co/TLDhZpB/Thaad.jpg",
+        "toyName" : "THAAD Sam System",
+        "sellerName" : "Peter Williams",
+        "sellerEmail" : "Williams@gmail.com",
+        "subCategory" : "Military Vehicle",
+        "price" : 50,
+        "rating" : "10/10",
+        "quantity" : 15,
+        "description" : "Highly detailed 172 scale THAAD Sam System diecast model made of metal alloy, perfect for military toy enthusiasts and collectors." 
+    }
+]
