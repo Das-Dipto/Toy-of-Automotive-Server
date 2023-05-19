@@ -29,11 +29,13 @@ async function run() {
 
     const storeCollection = client.db('totoStore').collection('toyData');
 
-    //Read operation for Shop by Category section
+    //Read operation for Shop by Category section and Single Toy detail section
     app.get('/storedata', async(req, res)=>{
         const result = await storeCollection.find().toArray();
         res.send(result);
     })
+
+    
 
 
 
