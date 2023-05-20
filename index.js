@@ -35,6 +35,17 @@ async function run() {
         res.send(result);
     })
 
+    //Read Operation for added toy by specific user
+    app.get('/userToy', async(req, res)=>{
+      // console.log(req.query.sellerEmail)
+      let query = {};
+      if(req.query?.sellerEmail){
+        query = {sellerEmail: req.query.sellerEmail}
+      }
+      const result = await storeCollection.find(query).toArray();
+      res.send(result);
+    })
+
     //Create Operation for Add a toy Section
     app.post('/addToys', async(req, res)=>{
         const newToy = req.body;
@@ -42,6 +53,8 @@ async function run() {
         const result = await storeCollection.insertOne(newToy);
         res.send(result);
     })
+
+    
 
 
     // Send a ping to confirm a successful connection
