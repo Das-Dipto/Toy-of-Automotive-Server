@@ -35,6 +35,13 @@ async function run() {
         res.send(result);
     })
 
+
+    //Read operation for getting 20 items to render AllToy Page
+    app.get('/requiredToyData', async(req, res)=>{
+      const result = await storeCollection.find().limit(15).toArray();
+      res.send(result);
+  })
+
     //Read Operation for added toy by specific user
     app.get('/userToy', async(req, res)=>{
       // console.log(req.query.sellerEmail)
@@ -52,6 +59,28 @@ async function run() {
       const query = {_id: new ObjectId(id)}
       const result = await storeCollection.findOne(query);
       res.send(result)
+    })
+
+    //Read operation for sorting data according to price
+    app.get('/price/:sortPrice', async(req, res)=>{
+       const sortOrder = req.params.sortPrice.toLowerCase();
+      //  console.log(sortOrder);
+      //  console.log(req.query?.sellerEmail)
+       let query = {};
+       if(req.query?.sellerEmail){
+         query = {sellerEmail: req.query.sellerEmail}
+       }
+
+       let sortQuery = {};
+       if(sortOrder === 'ascending'){
+         sortQuery = {price: 1};
+       }
+       else if (sortOrder === 'descending'){
+         sortQuery = {price: -1}
+       }
+
+       const result = await storeCollection.find(query).sort(sortQuery).toArray();
+       res.send(result);
     })
 
     //Create Operation for Add a toy Section
