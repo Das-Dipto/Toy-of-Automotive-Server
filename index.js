@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 require('dotenv').config();
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const port = process.env.PORT || 5000;
 
 //middleware
@@ -46,12 +46,48 @@ async function run() {
       res.send(result);
     })
 
+    //Read operation for finding single toy data
+    app.get('/singleToy/:id', async(req, res)=>{
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)}
+      const result = await storeCollection.findOne(query);
+      res.send(result)
+    })
+
     //Create Operation for Add a toy Section
     app.post('/addToys', async(req, res)=>{
         const newToy = req.body;
         console.log(newToy);
         const result = await storeCollection.insertOne(newToy);
         res.send(result);
+    })
+
+    //Update Operation for MyToys page
+    app.put('/updateToy/:id', async(req, res)=>{
+      const id = req.params.id;
+      const info = req.body;
+      const filter = {_id: new ObjectId(id)}
+      const options = {upsert: true};
+      const updatedData = {
+        $set:{
+          price: info.price,
+          quantity: info.quantity,
+          description: info.description
+        }
+      }
+
+      const result = await storeCollection.updateOne(filter, updatedData, options);  
+      res.send(result);
+    })
+
+
+
+    //Delete Operation for deleting toys from user added list
+    app.delete('/deleteToy/:id', async (req, res)=>{
+      const id = req.params.id;
+      const query = {_id: new ObjectId(id)}
+      const result = await storeCollection.deleteOne(query);
+      res.send(result);
     })
 
     
