@@ -83,6 +83,24 @@ async function run() {
        res.send(result);
     })
 
+    //Read operation for sorting data by Toy Name in All toy page
+    app.get('/searchToy/:toyName', async(req, res)=>{
+       const toy = req.params.toyName;
+      //  console.log(toy);
+       const toyRegex = new RegExp(toy, 'i');
+
+       const result = await storeCollection.find({ toyName: toyRegex }).toArray();
+      //  console.log(result);
+       if(result.length > 0 ){
+          res.send(result);
+       }
+       else{
+        res.sendStatus(404);
+       }
+       
+    })
+
+
     //Create Operation for Add a toy Section
     app.post('/addToys', async(req, res)=>{
         const newToy = req.body;
